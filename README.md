@@ -49,4 +49,3 @@ Contributions are welcomed! If you have a cool feature in mind or found a bug, p
 ## Note
 
 Blizzard Bot is currently in active development. Stay tuned for updates and new features! 
-# Blizzard-bot
