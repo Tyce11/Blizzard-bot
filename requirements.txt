@@ -3,3 +3,4 @@ yt-dlp
 PyNaCl
 python-dotenv
 google-api-python-client 
+youtube-search-python

@@ -3,6 +3,8 @@ import discord
 import asyncio
 from discord.ext import commands
 from yt_dlp import YoutubeDL
+from youtubesearchpython import VideosSearch
+
 
 from googleapiclient.discovery import build
 import os
@@ -29,26 +31,15 @@ class music_cog(commands.Cog):
     
 
     def query_yt(self, query):
-        youtube_api_key = yt_key
-        youtube = build('youtube', 'v3', developerKey=youtube_api_key)
-
-        search_response = youtube.search().list(
-            part='id',
-            q=query,
-            type='video',
-            maxResults=1
-        ).execute()
         
+        videos_search = VideosSearch(query, limit = 1)
+        results = videos_search.result()
 
-        if 'items' in search_response:
-            try:
-                video_id = search_response['items'][0]['id']['videoId']
-                video_url = f'https://www.youtube.com/watch?v={video_id}'
-                return video_url
-            except Exception:
-                return None
-
-        return None
+        if results['result']:
+            first_video = results['result'][0]
+            video_url = first_video['link']
+            return video_url
+        
 
     def search_yt(self, item):
 
