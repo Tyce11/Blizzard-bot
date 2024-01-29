@@ -26,6 +26,8 @@ class music_cog(commands.Cog):
 
         self.is_looping = False
 
+        self.url = ''
+
 
         self.vc = None
     
@@ -37,8 +39,8 @@ class music_cog(commands.Cog):
 
         if results['result']:
             first_video = results['result'][0]
-            video_url = first_video['link']
-            return video_url
+            self.url = first_video['link']
+            return self.url
         
 
     def search_yt(self, item):
@@ -108,7 +110,7 @@ class music_cog(commands.Cog):
             if type(song) == type(True):
                 await ctx.send("Couldn't get song!")
             else:
-                await ctx.send("Song added to queue")
+                await ctx.send("Song added to queue\n" + self.url)
                 self.music_queue.append([song, voice_channel])
 
                 if self.is_playing == False:
