@@ -25,11 +25,11 @@ Install the required dependencies <br>
 `pip install -r requirements.txt`
 
 Create your .env file <br>
-Linux: `touch .env`
+Linux: `touch .env` <br>
 Windows: `echo > .env`
 
 Open your .env file <br>
-Linux: `nano .env` 
+Linux: `nano .env` <br>
 Windows: `notepad .env`
 
 Add your two keys <br>
