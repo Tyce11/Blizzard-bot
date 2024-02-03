@@ -21,18 +21,20 @@ Move into your directory <br>
 Clone the repository <br>
 `git clone https://github.com/Tyce11/Blizzard-bot.git`
 
-Install the required dependancies <br>
+Install the required dependencies <br>
 `pip install -r requirements.txt`
 
 Create your .env file <br>
-`touch .env`
+Linux: `touch .env`
+Windows: `echo > .env`
 
 Open your .env file <br>
-`nano .env` 
+Linux: `nano .env` 
+Windows: `notepad .env`
 
 Add your two keys <br>
 `TOKEN='Your-Discord-Token'` <br>
- `YT_Key='Your-YouTube-Token'`
+`YT_Key='Your-YouTube-Token'`
 
 Run main.py <br>
 `python3 /path/to/main.py`
